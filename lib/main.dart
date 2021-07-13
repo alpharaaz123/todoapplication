@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:todoapplication/pages/signup.dart';
+import 'package:todoapplication/others/News.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,16 +23,16 @@ class _MyAppState extends State<MyApp> {
     try {
       await firebaseAuth.createUserWithEmailAndPassword(
           email: "raazbogati4@gmail.com", password: "123456");
+      // ignore: empty_catches
     } catch (e) {
-      print(e) {}
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUpPage(),
+      home: NewsPage(),
     );
   }
 }

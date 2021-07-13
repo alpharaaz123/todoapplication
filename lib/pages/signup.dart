@@ -21,28 +21,34 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 "Sign Up",
                 style: TextStyle(
                     fontSize: 35,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               buttonItem(
-                  "lib/assets/GoogleIcon.svg", "Continue with Google", 25),
-              SizedBox(height: 15),
-              buttonItem("lib/assets/Phone.svg", "Continue with Mobile", 30),
+                "lib/assets/GoogleIcon.svg",
+                "Continue with Google",
+                25,
+              ),
+              const SizedBox(height: 15),
+              buttonItem(
+                  "lib/assets/GoogleIcon.svg", "Continue with Mobile", 30),
             ],
           ),
         ),
       )),
     );
   }
+  
 
   Widget buttonItem(String imagepath, String buttonName, double size) {
+    // ignore: sized_box_for_whitespace
     return Container(
       width: MediaQuery.of(context).size.width - 60,
       height: 60,
@@ -51,7 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
         elevation: 8,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
-            side: BorderSide(
+            side: const BorderSide(
               width: 1,
               color: Colors.grey,
             )),
@@ -63,16 +69,18 @@ class _SignUpPageState extends State<SignUpPage> {
               height: size,
               width: size,
             ),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             Text(
               buttonName,
-              style: TextStyle(color: Colors.white, fontSize: 17),
+              style: const TextStyle(color: Colors.white, fontSize: 17),
             )
           ],
         ),
       ),
     );
+     
   }
+  
 }
